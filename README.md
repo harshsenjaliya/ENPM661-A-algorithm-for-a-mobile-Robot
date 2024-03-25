@@ -1,33 +1,59 @@
 # ENPM661-A*-algorithm-for-a-mobile-Robot
 This project implements the A* algorithm to find a path for a mobile robot from a start point to a goal point on a given map. The robot has a radius of 5mm and a clearance of 5mm. The code provides visualization of both node exploration and the optimal path generated.
 
-### Features
+# Implementation of A* Algorithm for a Mobile Robot
 
-- A* Algorithm: The code implements the A* search algorithm to find the optimal path from the start point to the goal point.
-- Visualization: The code provides a visual representation of the map with explored areas, obstacles, start point, and goal point.
-- User Input: Allows users to input start and goal coordinates, clearance, robot radius, and step size.
-- Path Planning: The algorithm plans a collision-free path for the robot considering the given map and obstacles.
+This repository contains Python code to implement the A* algorithm for finding a path between a start and goal point for a mobile robot. The algorithm takes into account obstacles in the environment and generates an optimal path considering the robot's dimensions.
 
-### Requirements
+## Contents
+
+- **main.py**: Python script containing the implementation of the A* algorithm and visualization of the pathfinding process.
+- **README.md**: This file providing information about the project.
+
+## Prerequisites
 
 - Python 3.x
-- numpy
-- matplotlib
-- time
-- queue
+- Required libraries: `numpy`, `matplotlib`
 
-### Usage
+## Usage
 
-1. Clone the repository:
-git clone <https://github.com/harshsenaliya4433/ENPM661-A-algorithm-for-a-mobile-Robot/tree/main>
+1. Clone the repository to your local machine:
 
+    ```bash
+    git clone https://github.com/<username>/Astar-Mobile-Robot.git
+    ```
 
-2. Run the code:
-3. A_star_algorithm.py
+2. Navigate to the project directory:
 
+    ```bash
+    cd Astar-Mobile-Robot
+    ```
 
-4. Follow the on-screen instructions to input start and goal coordinates, clearance, robot radius, and step size.
+3. Run the main script:
 
-### Sample Map
+    ```bash
+    python main.py
+    ```
 
-The provided map is a 2D grid with obstacles represented as filled cells. The start and goal points are marked on the map with different symbols.
+4. Follow the prompts to input start and goal coordinates, clearance, robot radius, and step size of the robot. The visualization of the optimal path generation between the start and goal points will be displayed.
+
+## Input
+
+- Start Point Coordinates: (X_s, Y_s, Θ_s)
+- Goal Point Coordinates: (X_g, Y_g, Θ_g)
+- Clearance and Robot Radius
+- Step Size of the Robot
+
+## Output
+
+- Visualization of the exploration process and optimal path generation between the start and goal points.
+
+## Acknowledgments
+
+The implementation is based on the A* algorithm. The shape map generation function is adapted from provided sample code.
+
+## Author
+
+[Your Name]
+
+ 
