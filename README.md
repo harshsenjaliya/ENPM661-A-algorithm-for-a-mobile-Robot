@@ -12,7 +12,7 @@ This repository contains Python code to implement the A* algorithm for finding a
 
 ## Prerequisites
 
-- Python 3.x
+- Python 3
 - Required libraries: `numpy`, `matplotlib`
 
 ## Usage
