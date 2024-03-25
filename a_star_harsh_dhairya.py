@@ -26,47 +26,72 @@ class Vertex:
         return self.cost < other.cost
 
 
-def move_up(x, y, cost):
-    return x, y + 1, cost + 1
+def move_60up(x,y,theta,step_size, cost):
+    theta = theta + 60
+    x = x + (step_size*np.cos(np.radians(theta)))
+    y = y + (step_size*np.sin(np.radians(theta)))
+    #x = round(x*2)/2
+    #y = round(y*2)/2
+    x = round(x)
+    y = round(y)
+    cost = 1 + cost
+    return x,y,theta,cost
 
-def move_down(x, y, cost):
-    return x, y - 1, cost + 1
+def move_30up(x,y,theta, step_size, cost):
+    theta = theta + 30
+    x = x + (step_size*np.cos(np.radians(theta)))
+    y = y + (step_size*np.sin(np.radians(theta)))
+    #x = round(x*2)/2
+    #y = round(y*2)/2
+    x = round(x)
+    y = round(y)
+    cost = 1 + cost
+    return x,y,theta, cost
 
-def move_left(x, y, cost):
-    return x - 1, y, cost + 1
+def move_0(x,y,theta, step_size, cost):
+    theta = theta + 0
+    x = x + (step_size*np.cos(np.radians(theta)))
+    y = y + (step_size*np.sin(np.radians(theta)))
+    #x = round(x*2)/2
+    #y = round(y*2)/2
+    x = round(x)
+    y = round(y)
+    cost = 1 + cost
+    return x,y,theta, cost
 
-def move_right(x, y, cost):
-    return x + 1, y, cost + 1
+def move_30down(x,y,theta, step_size, cost):
+    theta = theta - 30
+    x = x + (step_size*np.cos(np.radians(theta)))
+    y = y + (step_size*np.sin(np.radians(theta)))
+    #x = round(x*2)/2
+    #y = round(y*2)/2
+    x = round(x)
+    y = round(y)
+    cost = 1 + cost
+    return x,y,theta, cost
 
-def move_upright(x, y, cost):
-    return x + 1, y + 1, cost + np.sqrt(2)
+def move_60down(x,y,theta, step_size, cost):
+    theta = theta - 60
+    x = x + (step_size*np.cos(np.radians(theta)))
+    y = y + (step_size*np.sin(np.radians(theta)))
+    #x = round(x*2)/2
+    #y = round(y*2)/2
+    x = round(x)
+    y = round(y)
+    cost = 1 + cost
+    return x,y,theta,cost
 
-def move_downright(x, y, cost):
-    return x + 1, y - 1, cost + np.sqrt(2)
-
-def move_upleft(x, y, cost):
-    return x - 1, y + 1, cost + np.sqrt(2)
-
-def move_downleft(x, y, cost):
-    return x - 1, y - 1, cost + np.sqrt(2)
-
-def move_vertex(move, x_coord, y_coord, cost):
-    if move == 'Up':
-        return move_up(x_coord, y_coord, cost)
-    elif move == 'UpRight':
-        return move_upright(x_coord, y_coord, cost)
-    elif move == 'Right':
-        return move_right(x_coord, y_coord, cost)
-    elif move == 'DownRight':
-        return move_downright(x_coord, y_coord, cost)
-    elif move == 'Down':
-        return move_down(x_coord, y_coord, cost)
-    elif move == 'DownLeft':
-        return move_downleft(x_coord, y_coord, cost)
-    elif move == 'Left':
-        return move_left(x_coord, y_coord, cost)
-    elif move == 'UpLeft':
-        return move_upleft(x_coord, y_coord, cost)
+def move_vertex(move, x_coord, y_coord, theta, step_size, cost):
+    if move == '60up':
+        return move_60up(x_coord, y_coord, theta, step_size, cost)
+    elif move == '30up':
+        return move_30up(x_coord, y_coord, theta, step_size, cost)
+    elif move == '0':
+        return move_0(x_coord, y_coord, theta, step_size, cost)
+    elif move == '30down':
+        return move_30down(x_coord, y_coord, theta, step_size, cost)
+    elif move == '60down':
+        return move_60down(x_coord, y_coord, theta, step_size, cost)
     else:
         return None
 
@@ -99,7 +124,12 @@ def create_shape_map(width, height, buffer):
             trap_f_temp = (y_coord + buffer) - (375/2)
             trap_g_temp = (y_coord - buffer) - (450/2)
 
-            if((trap_a_temp > 0 and trap_b_temp < 0 and trap_d_temp > 0 and trap_e_temp < 0) or (trap_b_temp > 0 and trap_c_temp < 0 and trap_d_temp > 0 and trap_g_temp < 0) or (trap_f_temp > 0 and trap_g_temp < 0 and trap_a_temp > 0 and trap_b_temp < 0) or (rect_1_1_temp > 0 and rect_1_2_temp > 0 and rect_1_3_temp < 0 and rect__4_temp < 0) or (recta_2_1_temp > 0 and recta_2_3_temp < 0 and recta_2_4_temp < 0 and recta_2_2_temp > 0) or (hexagon_size_6_temp > 0 and hexagon_size_5_temp > 0 and hexagon_size_4_temp < 0 and hexagon_size_3_temp < 0 and hexagon_size_2_temp < 0 and hexagon_size_1_temp > 0)):
+            w1_temp = (y_coord) - (buffer)
+            w2_temp = (y_coord) - (250-buffer)
+            w3_temp = (x_coord) - (buffer)
+            w4_temp = (x_coord) - ((600-buffer))
+
+            if((trap_a_temp > 0 and trap_b_temp < 0 and trap_d_temp > 0 and trap_e_temp < 0) or (trap_b_temp > 0 and trap_c_temp < 0 and trap_d_temp > 0 and trap_g_temp < 0) or (trap_f_temp > 0 and trap_g_temp < 0 and trap_a_temp > 0 and trap_b_temp < 0) or (rect_1_1_temp > 0 and rect_1_2_temp > 0 and rect_1_3_temp < 0 and rect__4_temp < 0) or (recta_2_1_temp > 0 and recta_2_3_temp < 0 and recta_2_4_temp < 0 and recta_2_2_temp > 0) or (hexagon_size_6_temp > 0 and hexagon_size_5_temp > 0 and hexagon_size_4_temp < 0 and hexagon_size_3_temp < 0 and hexagon_size_2_temp < 0 and hexagon_size_1_temp > 0) or (w1_temp < 0) or (w2_temp > 0) or (w3_temp < 0) or (w4_temp > 0) ):
                 shape_map[y_coord, x_coord] = 1
 
             w1_temp = (y_coord) - (5/2)
@@ -132,7 +162,7 @@ def create_shape_map(width, height, buffer):
             trap_f = (y_coord) - (375/2)
             trap_g = (y_coord) - (450/2)
 
-            if((hexagon_size_6 > 0 and hexagon_size_5 > 0 and hexagon_size_4 < 0 and hexagon_size_3 < 0 and hexagon_size_2 < 0 and hexagon_size_1 > 0) or (rect_1_1 > 0 and rect_1_2 > 0 and rect_1_3 < 0 and rect__4 < 0 ) or (recta_2_1 > 0  and recta_2_3 < 0 and recta_2_4 < 0 and recta_2_2 > 0) or (trap_a > 0 and trap_b < 0 and trap_d > 0 and trap_e < 0) or (trap_b > 0 and trap_c < 0 and trap_d > 0 and trap_g < 0) or (trap_f > 0 and trap_g < 0 and trap_a > 0 and trap_b < 0) or (w1_temp < 0) or (w2_temp > 0) or (w3_temp < 0) or (w4_temp > 0)):
+            if((hexagon_size_6 > 0 and hexagon_size_5 > 0 and hexagon_size_4 < 0 and hexagon_size_3 < 0 and hexagon_size_2 < 0 and hexagon_size_1 > 0) or (rect_1_1 > 0 and rect_1_2 > 0 and rect_1_3 < 0 and rect__4 < 0 ) or (recta_2_1 > 0  and recta_2_3 < 0 and recta_2_4 < 0 and recta_2_2 > 0) or (trap_a > 0 and trap_b < 0 and trap_d > 0 and trap_e < 0) or (trap_b > 0 and trap_c < 0 and trap_d > 0 and trap_g < 0) or (trap_f > 0 and trap_g < 0 and trap_a > 0 and trap_b < 0)):
                 shape_map[y_coord, x_coord] = 2
 
     return shape_map
