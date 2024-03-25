@@ -19,14 +19,14 @@ This project implements the A* algorithm to find a path for a mobile robot from 
 ### Usage
 
 1. Clone the repository:
-git clone <repository-url>
+git clone <https://github.com/harshsenaliya4433/ENPM661-A-algorithm-for-a-mobile-Robot/tree/main>
 
 
 2. Run the code:
-python A_star_algorithm.py
+3. A_star_algorithm.py
 
 
-3. Follow the on-screen instructions to input start and goal coordinates, clearance, robot radius, and step size.
+4. Follow the on-screen instructions to input start and goal coordinates, clearance, robot radius, and step size.
 
 ### Sample Map
 
