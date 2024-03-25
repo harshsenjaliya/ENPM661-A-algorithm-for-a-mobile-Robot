@@ -47,13 +47,4 @@ This repository contains Python code to implement the A* algorithm for finding a
 ## Output
 
 - Visualization of the exploration process and optimal path generation between the start and goal points.
-
-## Acknowledgments
-
-The implementation is based on the A* algorithm. The shape map generation function is adapted from provided sample code.
-
-## Author
-
-[Your Name]
-
  
