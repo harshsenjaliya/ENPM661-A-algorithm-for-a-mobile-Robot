@@ -1,7 +1,7 @@
 # ENPM661-A*-algorithm-for-a-mobile-Robot
 This project implements the A* algorithm to find a path for a mobile robot from a start point to a goal point on a given map. The robot has a radius of 5mm and a clearance of 5mm. The code provides visualization of both node exploration and the optimal path generated.
 
-# Implementation of A* Algorithm for a Mobile Robot
+##Implementation of A* Algorithm for a Mobile Robot
 
 This repository contains Python code to implement the A* algorithm for finding a path between a start and goal point for a mobile robot. The algorithm takes into account obstacles in the environment and generates an optimal path considering the robot's dimensions.
 
