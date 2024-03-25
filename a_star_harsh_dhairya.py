@@ -245,3 +245,18 @@ def is_duplicate(current_vertex, new_vertex, explored_vertices, euclidean_thresh
             if euclidean_distance(vertex, new_vertex) < euclidean_thresh and abs(theta_threshold(current_vertex, new_vertex) - theta_threshold(current_vertex, vertex)) < theta_thresh:
                 return True
     return False
+
+def backtrack_path(goal_vertex):
+    current_vertex = goal_vertex
+    x_path, y_path = [current_vertex.x_coord], [current_vertex.y_coord]
+
+    while current_vertex.parent_vertex != -1:
+        current_vertex = current_vertex.parent_vertex
+        x_path.append(current_vertex.x_coord)
+        y_path.append(current_vertex.y_coord)
+
+    # Reverse the lists to get the correct order
+    x_path.reverse()
+    y_path.reverse()
+
+    return x_path, y_path
