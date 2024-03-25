@@ -20,7 +20,7 @@ This repository contains Python code to implement the A* algorithm for finding a
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/<username>/Astar-Mobile-Robot.git
+    git clone https://github.com/harshsenjaliya4433/ENPM661-A-algorithm-for-a-mobile-Robot/a_star_harsh_dhairya.py
     ```
 
 2. Navigate to the project directory:
