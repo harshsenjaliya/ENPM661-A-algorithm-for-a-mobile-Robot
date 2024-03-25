@@ -26,13 +26,13 @@ This repository contains Python code to implement the A* algorithm for finding a
 2. Navigate to the project directory:
 
     ```bash
-    cd Astar-Mobile-Robot
+    cd ENPM661-A-algorithm-for-a-mobile-Robot
     ```
 
 3. Run the main script:
 
     ```bash
-    python main.py
+    a_star_harsh_dhairya.py
     ```
 
 4. Follow the prompts to input start and goal coordinates, clearance, robot radius, and step size of the robot. The visualization of the optimal path generation between the start and goal points will be displayed.
