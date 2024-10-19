@@ -48,12 +48,6 @@ This repository contains Python code to implement the A* algorithm for finding a
 
 - Visualization of the exploration process and optimal path generation between the start and goal points.
 
-### Sample Output Image:
-
-Here is a sample image showing the robot's path and the explored nodes:
-
-![A* Pathfinding Output](output.png)
-
 ### Demo Video:
 
 You can watch the full demo of the algorithm in action here:
