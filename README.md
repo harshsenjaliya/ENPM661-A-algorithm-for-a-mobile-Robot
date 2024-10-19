@@ -58,5 +58,5 @@ Here is a sample image showing the robot's path and the explored nodes:
 
 You can watch the full demo of the algorithm in action here:
 
-[![Watch the Video](a_star_harsh_dhairya.mp4)
+[![Watch the Video](a_star_harsh_dhairya.gif)
 
